@@ -30,7 +30,7 @@ public class FruitController extends ViewBaseServlet {
 
     public void setServletContext(ServletContext servletContext) throws ServletException {
         this.servletContext = servletContext;
-        super.init(servletContext);
+        super.init(servletContext); //
     }
 
     private FruitDAO fruitDAO = new FruitDAOImpl();

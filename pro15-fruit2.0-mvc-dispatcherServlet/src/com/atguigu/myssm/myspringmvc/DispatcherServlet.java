@@ -35,11 +35,16 @@ public class DispatcherServlet extends HttpServlet {
     private Map<String, Object> beanMap = new HashMap<>();
 
     public DispatcherServlet() {
-
     }
 
     public void init() {
         try {
+
+            /*
+            解析applicationContext.xml配置文件，把配置文件里面的所有的bean标签它的实例对象
+            全部加载并保存在一个map对象中去，然后fruit关键字就能通过id来获取对应的类名
+            // Object controllerBeanObj = beanMap.get(servletPath);// servletPath==fruit
+             */
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream("applicationContext.xml");
             //1.创建DocumentBuilderFactory
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -56,10 +61,10 @@ public class DispatcherServlet extends HttpServlet {
                     String beanId = beanElement.getAttribute("id");
                     String className = beanElement.getAttribute("class");
 /*
-                因为fruitController的被删掉了，这个类不会被识别成一个servlet
-                就不会用servletContext这个属性，所以就会报空指针异常
-                那么现在就需要自己在fruitController类里面自己设置servletContext这个属性
-                并且通过反射给servletContext属性赋值。
+                    因为fruitController的被删掉了，这个类不会被识别成一个servlet
+                    就不会用servletContext这个属性，所以就会报空指针异常
+                    那么现在就需要自己在fruitController类里面自己设置servletContext这个属性
+                    并且通过反射给servletContext属性赋值。
  */
                     Class controlerBeanClass = Class.forName(className);
                     Object beanObj = controlerBeanClass.newInstance();

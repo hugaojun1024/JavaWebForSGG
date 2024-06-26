@@ -1,6 +1,6 @@
 package com.atguigu.myssm.myspringmvc;
 
-import org.thymeleaf.TemplateEngine;
+import  org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;

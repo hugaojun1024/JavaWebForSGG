@@ -36,7 +36,6 @@ public class DispatcherServlet extends ViewBaseServlet {
     private Map<String, Object> beanMap = new HashMap<>();
 
     public DispatcherServlet(){
-        
     }
 
     public void init() throws ServletException {

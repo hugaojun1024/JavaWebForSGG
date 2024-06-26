@@ -52,7 +52,6 @@ public class FruitServlet extends ViewBaseServlet {
             }
         }
         throw new RuntimeException("operate值非法！");
-
     }
 
     private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -67,7 +67,7 @@ public abstract class BaseDAO<T> {
 
     //给预处理命令对象设置参数
     private void setParams(PreparedStatement psmt , Object... params) throws SQLException {
-        if(params!=null && params.length>0){
+        if(params != null && params.length > 0){
             for (int i = 0; i < params.length; i++) {
                 psmt.setObject(i+1,params[i]);
             }

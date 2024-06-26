@@ -3,7 +3,6 @@ package com.atguigu.servlets;
 //演示Servlet的生命周期
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,5 +36,4 @@ public class Demo02Servlet extends HttpServlet {
     public void destroy() {
         System.out.println("正在销毁...");
     }
-
 }
